@@ -107,7 +107,7 @@ img {
 }
 
 .brand-logo-img {
-  max-height: 50px;
+  max-height: 46px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
@@ -115,15 +115,15 @@ img {
 }
 
 .dxmt-logo-img {
-  max-height: 38px;
+  max-height: 56px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.25));
 }
 
 .logo-divider {
   width: 1px;
-  height: 34px;
+  height: 40px;
   background: var(--border-gold);
   opacity: 0.6;
 }
@@ -133,16 +133,15 @@ img {
 }
 
 .footer-logo-img {
-  max-height: 54px;
+  max-height: 48px;
   width: auto;
   object-fit: contain;
 }
 
 .footer-dxmt-img {
-  max-height: 42px;
+  max-height: 60px;
   width: auto;
   object-fit: contain;
-  margin-top: 6px;
 }
 
 .logo-text {
