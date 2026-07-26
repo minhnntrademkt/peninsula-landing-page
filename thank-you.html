@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cảm Ơn Quý Khách Đã Đăng Ký | Peninsula Đà Nẵng</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Google Fonts - Be Vietnam Pro Single Font System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ====================================================================
+       FACEBOOK PIXEL & GOOGLE ADS CONVERSION TRACKING CODE PLACEHOLDER
+       (Chèn mã Pixel theo dõi chuyển đổi Lead của bạn vào đây)
+       ==================================================================== -->
+  <!-- 
+  <script>
+    // Facebook Pixel Lead Conversion Event
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead', { content_name: 'Peninsula Da Nang Lead' });
+  </script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-YOUR_CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-YOUR_CONVERSION_ID');
+    gtag('event', 'conversion', {'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_LABEL'});
+  </script>
+  -->
+</head>
+<body>
+
+  <div class="thankyou-wrapper">
+    <div class="thankyou-card">
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h1 class="thankyou-title">ĐĂNG KÝ THÀNH CÔNG!</h1>
+      <p class="thankyou-msg">
+        Cảm ơn quý khách đã quan tâm đến dự án căn hộ cao cấp <strong>Peninsula Đà Nẵng</strong>. Bộ phận kinh doanh chủ đầu tư đã nhận được thông tin và sẽ liên hệ tư vấn trong vòng 5 - 10 phút.
+      </p>
+
+      <!-- Customer Data Summary -->
+      <div class="lead-summary-box">
+        <h4 style="color: var(--primary-gold); margin-bottom: 12px;"><i class="fa-solid fa-clipboard-check"></i> Thông Tin Đăng Ký Của Quý Khách:</h4>
+        <div class="lead-summary-item">
+          <span class="lead-summary-label">Họ và tên:</span>
+          <span class="lead-summary-val" id="displayCustomerName">Đang tải...</span>
+        </div>
+        <div class="lead-summary-item">
+          <span class="lead-summary-label">Số điện thoại:</span>
+          <span class="lead-summary-val" id="displayCustomerPhone">Đang tải...</span>
+        </div>
+        <div class="lead-summary-item">
+          <span class="lead-summary-label">Căn hộ quan tâm:</span>
+          <span class="lead-summary-val" id="displayApartmentType">Đang tải...</span>
+        </div>
+      </div>
+
+      <!-- Developer / Pixel Note Box -->
+      <div class="pixel-note-box">
+        <strong style="color: var(--primary-gold);"><i class="fa-solid fa-code"></i> Ghi chú dành cho nhà quảng cáo (Marketer):</strong><br>
+        Trang này (<code>thank-you.html</code>) đã sẵn sàng để gắn mã <strong>Facebook Pixel (Sự kiện Lead)</strong>, <strong>Google Ads Conversion</strong> hoặc <strong>TikTok Pixel</strong>. Mã theo dõi sẽ được kích hoạt mỗi khi khách điền form thành công!
+      </div>
+
+      <div class="thankyou-actions">
+        <a href="index.html" class="apt-btn" style="background: var(--primary-gold); color: #060b12; text-decoration: none;">
+          <i class="fa-solid fa-arrow-left"></i> QUAY LẠI TRANG CHỦ
+        </a>
+        <a href="#" class="apt-btn" style="text-decoration: none;">
+          <i class="fa-solid fa-phone"></i> GỌI HOTLINE TƯ VẤN
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse URL Search Parameters or SessionStorage
+      const urlParams = new URLSearchParams(window.location.search);
+      let name = urlParams.get('name');
+      let phone = urlParams.get('phone');
+      let type = urlParams.get('type');
+
+      if (!name || !phone) {
+        // Fallback to sessionStorage if query params missing
+        const stored = sessionStorage.getItem('peninsula_lead_data');
+        if (stored) {
+          try {
+            const data = JSON.parse(stored);
+            name = data.name;
+            phone = data.phone;
+            type = data.type;
+          } catch(e) {}
+        }
+      }
+
+      document.getElementById('displayCustomerName').innerText = name ? decodeURIComponent(name) : 'Quý khách';
+      document.getElementById('displayCustomerPhone').innerText = phone ? decodeURIComponent(phone) : 'Chưa cập nhật';
+      document.getElementById('displayApartmentType').innerText = type ? decodeURIComponent(type) : 'Tất cả các loại căn';
+    });
+  </script>
+</body>
+</html>
