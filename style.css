@@ -106,16 +106,23 @@ img {
   gap: 12px;
 }
 
-.logo-icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 4px 12px rgba(207, 168, 95, 0.4));
+.brand-logo-img {
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   transition: var(--transition);
 }
 
-.logo-icon-wrapper:hover {
-  transform: scale(1.05);
+.brand-logo-img:hover {
+  transform: scale(1.03);
+}
+
+.footer-logo-img {
+  max-height: 58px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
 .logo-text {
