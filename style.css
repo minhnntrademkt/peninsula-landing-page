@@ -103,26 +103,46 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .brand-logo-img {
-  max-height: 52px;
+  max-height: 50px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   transition: var(--transition);
 }
 
-.brand-logo-img:hover {
+.dxmt-logo-img {
+  max-height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.2));
+}
+
+.logo-divider {
+  width: 1px;
+  height: 34px;
+  background: var(--border-gold);
+  opacity: 0.6;
+}
+
+.brand-logo-img:hover, .dxmt-logo-img:hover {
   transform: scale(1.03);
 }
 
 .footer-logo-img {
-  max-height: 58px;
+  max-height: 54px;
   width: auto;
   object-fit: contain;
-  margin-bottom: 12px;
+}
+
+.footer-dxmt-img {
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 6px;
 }
 
 .logo-text {
