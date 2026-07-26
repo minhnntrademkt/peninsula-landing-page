@@ -106,18 +106,16 @@ img {
   gap: 12px;
 }
 
-.logo-icon {
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, var(--primary-gold), #8a6a29);
-  border-radius: 50%;
+.logo-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: var(--shadow-gold);
+  filter: drop-shadow(0 4px 12px rgba(207, 168, 95, 0.4));
+  transition: var(--transition);
+}
+
+.logo-icon-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .logo-text {
@@ -133,6 +131,7 @@ img {
   background: linear-gradient(135deg, #fff, var(--primary-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
 .logo-sub {
@@ -140,6 +139,20 @@ img {
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--text-muted);
+}
+
+.logo-distributor {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  background: rgba(207, 168, 95, 0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(207, 168, 95, 0.25);
+  display: inline-block;
 }
 
 .nav-menu {
